@@ -29,6 +29,10 @@ $email   = strtolower($f('email'));
 $message = $f('message');
 $interest= $f('interest');
 $source  = $f('source') ?: 'Website';
+$pageUrl = $f('page_url');
+// only keep a sane http(s) url
+if ($pageUrl !== '' && !preg_match('#^https?://#i', $pageUrl)) $pageUrl = '';
+$pageUrl = substr($pageUrl, 0, 255);
 
 if ($name === '' || ($phone === '' && $email === '')) {
     json_out(['ok' => false, 'error' => 'Please provide your name and a phone number or email.'], 422);
@@ -51,10 +55,10 @@ try {
 
 try {
     $stmt = db()->prepare(
-        'INSERT INTO leads (name,email,phone,interest,message,source,item_type,item_id,client_id)
-         VALUES (?,?,?,?,?,?,?,?,?)'
+        'INSERT INTO leads (name,email,phone,interest,message,source,page_url,item_type,item_id,client_id)
+         VALUES (?,?,?,?,?,?,?,?,?,?)'
     );
-    $stmt->execute([$name, $email ?: null, $phone, $interest, $message, $source, $itemType, $itemId, $clientId]);
+    $stmt->execute([$name, $email ?: null, $phone, $interest, $message, $source, $pageUrl ?: null, $itemType, $itemId, $clientId]);
 } catch (Throwable $e) {
     error_log('Lead insert failed: ' . $e->getMessage());
     json_out(['ok' => false, 'error' => 'Something went wrong. Please try again or call us.'], 500);
@@ -70,10 +74,12 @@ if ($to && filter_var($to, FILTER_VALIDATE_EMAIL)) {
     $body .= "Name:     $name\n";
     $body .= "Phone:    $phone\n";
     $body .= "Email:    " . ($email ?: '-') . "\n";
-    $body .= "Interest: " . ($interest ?: '-') . "\n";
+    $body .= "Interest: " . ($interest ?: '-') . "  (type of enquiry)\n";
     $body .= "Source:   $source\n";
+    if ($pageUrl) $body .= "Page:     $pageUrl   <- open this to see what they were viewing\n";
     if ($itemType) $body .= "Property: $itemType #$itemId\n";
     $body .= "\nMessage:\n" . ($message ?: '-') . "\n";
+    $body .= "\n---\nReply to this email to respond to " . $name . " directly.\n";
     $headers  = 'From: ' . $fromName . ' <' . $from . ">\r\n";
     if ($email) $headers .= 'Reply-To: ' . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=utf-8\r\n";

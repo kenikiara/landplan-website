@@ -53,7 +53,23 @@ $img = fn($p) => e(ltrim((string)$p, '/'));
     </div>
     <?php endif; ?>
 
-    <div style="margin-top:34px"><a href="contact.html" class="btn btn-green">Enquire about this project <span class="arrow">&#8594;</span></a></div>
+    <div class="card" style="margin-top:34px;max-width:560px;border:1px solid var(--line);border-radius:14px;padding:22px">
+      <h3 style="margin-bottom:4px">Enquire about this project</h3>
+      <p class="muted" style="margin-bottom:16px">Send us a message and our team will get back to you.</p>
+      <form class="form-grid" data-enquiry>
+        <input type="hidden" name="item_type" value="project">
+        <input type="hidden" name="item_id" value="<?= (int)$P['id'] ?>">
+        <input type="hidden" name="source" value="Project: <?= e($P['title']) ?>">
+        <input type="hidden" name="interest" value="A Project / Estate">
+        <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-field"><label>Full Name</label><input type="text" name="name" required></div>
+        <div class="form-field"><label>Phone</label><input type="tel" name="phone" required></div>
+        <div class="form-field full"><label>Email</label><input type="email" name="email"></div>
+        <div class="form-field full"><label>Message</label><textarea name="message">Hi Landplan, I'm interested in the <?= e($P['title']) ?> project<?= $P['location'] ? ' in ' . e($P['location']) : '' ?>. Please send me more details. Thank you.</textarea></div>
+        <div class="form-field full"><button type="submit" class="btn btn-green">Send Enquiry</button></div>
+      </form>
+      <div class="form-success"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg> Thanks! We'll be in touch within 24 hours.</div>
+    </div>
 
     <?php if ($more): ?>
     <h3 style="margin:44px 0 14px">More Projects</h3>

@@ -107,6 +107,8 @@
       var btn = form.querySelector('button[type=submit]');
       var success = form.parentElement.querySelector('.form-success') || document.querySelector('.form-success');
       var fd = new FormData(form);
+      // attach the exact page the visitor was on, so the team can jump straight to it
+      fd.set('page_url', window.location.href);
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; }
 
       fetch('api/leads.php', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
@@ -124,6 +126,33 @@
         .catch(function () { alert('Network error. Please check your connection and try again.'); })
         .finally(function () { if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Send'; } });
     });
+  });
+
+  /* ---------- Pre-write the message from the chosen inquiry type ---------- */
+  function premadeMessage(interest) {
+    var map = {
+      'Buying Land': 'I am interested in buying land.',
+      'Buying a House': 'I am interested in buying a house.',
+      'Architecture & Design': 'I would like to discuss architecture and design services.',
+      'Building & Construction': 'I would like to discuss building and construction services.',
+      'A Project / Estate': 'I am interested in one of your projects or estates.',
+      'Other': 'I would like to make an enquiry.'
+    };
+    var line = map[interest] || 'I would like to make an enquiry.';
+    return 'Hi Landplan, ' + line + ' Please get in touch with more details. Thank you.';
+  }
+  document.querySelectorAll('form[data-enquiry]').forEach(function (form) {
+    var sel = form.querySelector('select[name="interest"]');
+    var msg = form.querySelector('textarea[name="message"]');
+    if (!sel || !msg) return;
+    sel.addEventListener('change', function () {
+      // fill if empty or if the box still holds a previously auto-written message
+      if (msg.value.trim() === '' || msg.dataset.auto === '1') {
+        if (sel.value) { msg.value = premadeMessage(sel.value); msg.dataset.auto = '1'; }
+      }
+    });
+    // if the user edits it themselves, stop auto-overwriting
+    msg.addEventListener('input', function () { msg.dataset.auto = ''; });
   });
 
   /* ---------- Show "My Account" only when a client is logged in ---------- */

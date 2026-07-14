@@ -192,7 +192,8 @@ CREATE TABLE leads (
   phone      VARCHAR(40),
   interest   VARCHAR(120),                        -- "Buying Land", "Building", etc.
   message    TEXT,
-  source     VARCHAR(120),                        -- which page/form
+  source     VARCHAR(120),                        -- which page/form (human label)
+  page_url   VARCHAR(255),                        -- exact page the visitor enquired from
   item_type  VARCHAR(20) NULL,                    -- 'land' | 'house' | 'project'
   item_id    INT NULL,                            -- optional: enquiry on a specific item
   client_id  INT NULL,                            -- set when converted to a client
