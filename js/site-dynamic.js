@@ -126,6 +126,20 @@
     });
   });
 
+  /* ---------- Show "My Account" only when a client is logged in ---------- */
+  (function () {
+    var btns = document.querySelectorAll('.nav-account');
+    if (!btns.length) return;
+    fetch('api/me.php', { headers: { 'Accept': 'application/json' }, credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : { loggedIn: false }; })
+      .then(function (res) {
+        if (res && res.loggedIn) {
+          btns.forEach(function (b) { b.style.display = ''; });
+        }
+      })
+      .catch(function () { /* not logged in / offline: leave hidden */ });
+  })();
+
   /* ---------- Save / wishlist ---------- */
   function bindSaveButtons(scope) {
     (scope || document).querySelectorAll('[data-save-type]').forEach(function (btn) {

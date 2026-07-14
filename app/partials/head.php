@@ -16,9 +16,12 @@ $ig       = $s['social_instagram'] ?? '#';
 $li       = $s['social_linkedin']  ?? '#';
 $wa       = $s['social_whatsapp']  ?? ('https://wa.me/' . ltrim($phoneRaw, '+'));
 
-$title  = $page_title ?? 'Landplan.co.ke, Land & Property Solutions';
-$desc   = $page_desc  ?? 'We sell land, design dream spaces, build quality homes and develop projects that last generations.';
-$active = $active ?? '';
+$title    = $page_title ?? 'Landplan.co.ke | Buy Land, Houses & Property Solutions in Kenya';
+$desc     = $page_desc  ?? 'Landplan.co.ke sells verified land with ready title deeds, move-in-ready houses, and full architecture, construction and project development services across Kenya. Trusted, transparent and professional.';
+$active   = $active ?? '';
+$ogImage  = !empty($og_image) ? $og_image : base_url('assets/img/hero.jpg');
+$ogUrl    = rtrim(base_url(), '/') . ($_SERVER['REQUEST_URI'] ?? '/');
+$siteName = $s['site_name'] ?? 'Landplan.co.ke';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,10 +30,22 @@ $active = $active ?? '';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= e($title) ?></title>
 <meta name="description" content="<?= e($desc) ?>">
+<link rel="canonical" href="<?= e($ogUrl) ?>">
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:site_name" content="<?= e($siteName) ?>">
 <meta property="og:title" content="<?= e($title) ?>">
 <meta property="og:description" content="<?= e($desc) ?>">
 <meta property="og:type" content="website">
-<?php if (!empty($og_image)): ?><meta property="og:image" content="<?= e($og_image) ?>"><?php endif; ?>
+<meta property="og:url" content="<?= e($ogUrl) ?>">
+<meta property="og:image" content="<?= e($ogImage) ?>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_KE">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?= e($title) ?>">
+<meta name="twitter:description" content="<?= e($desc) ?>">
+<meta name="twitter:image" content="<?= e($ogImage) ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -105,7 +120,7 @@ $active = $active ?? '';
       </div>
       <a href="contact.html"<?= $active === 'contact' ? ' class="active"' : '' ?>>Contact Us</a>
     </nav>
-    <a href="client/" class="btn btn-outline-dark btn-sm">My Account</a>
+    <a href="client/" class="btn btn-outline-dark btn-sm nav-account" style="display:none">My Account</a>
     <a href="contact.html" class="btn btn-green btn-sm">Get Started</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
       <span></span><span></span><span></span>
