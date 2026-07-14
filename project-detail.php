@@ -1,0 +1,69 @@
+<?php
+require_once __DIR__ . '/app/helpers.php';
+$pdo = db();
+
+$slug = get('slug');
+$stmt = $pdo->prepare("SELECT * FROM projects WHERE slug=? LIMIT 1");
+$stmt->execute([$slug]);
+$P = $stmt->fetch();
+if (!$P) { http_response_code(404); require __DIR__ . '/404.html'; exit; }
+
+$imgs = $pdo->prepare('SELECT path FROM project_images WHERE project_id=? ORDER BY sort, id');
+$imgs->execute([$P['id']]);
+$gallery = array_column($imgs->fetchAll(), 'path');
+$hero = $P['cover_image'] ?: ($gallery[0] ?? '');
+
+$more = $pdo->prepare("SELECT title,slug,location,cover_image,status FROM projects WHERE id<>? ORDER BY featured DESC, created_at DESC LIMIT 3");
+$more->execute([$P['id']]);
+$more = $more->fetchAll();
+
+$page_title = $P['meta_title'] ?: ($P['title'] . ' — Landplan.co.ke');
+$page_desc  = $P['meta_description'] ?: excerpt($P['description'] ?: $P['title'], 30);
+$og_image   = $hero ? base_url(ltrim($hero,'/')) : '';
+$active = 'projects';
+require __DIR__ . '/app/partials/head.php';
+$img = fn($p) => e(ltrim((string)$p, '/'));
+?>
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="projects.html">Projects</a><span class="sep">/</span><span class="current"><?= e($P['title']) ?></span></div>
+    <h1><?= e($P['title']) ?></h1>
+    <p class="lead"><?= e($P['location']) ?> · <?= e(ucfirst($P['status'])) ?> project</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <?php if ($hero): ?>
+    <div style="border-radius:14px;overflow:hidden;margin-bottom:24px"><img src="<?= $img($hero) ?>" alt="<?= e($P['title']) ?>" data-lightbox style="width:100%"></div>
+    <?php endif; ?>
+
+    <div class="prose" style="max-width:820px">
+      <?php foreach (preg_split('/\r?\n\r?\n/', (string)$P['description']) as $para): if(trim($para)==='')continue; ?>
+        <p><?= e(trim($para)) ?></p>
+      <?php endforeach; ?>
+    </div>
+
+    <?php if ($gallery): ?>
+    <h3 style="margin:30px 0 14px">Gallery</h3>
+    <div class="projects-grid">
+      <?php foreach ($gallery as $g): ?>
+        <figure class="proj"><img src="<?= $img($g) ?>" alt="<?= e($P['title']) ?>" data-lightbox></figure>
+      <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
+    <div style="margin-top:34px"><a href="contact.html" class="btn btn-green">Enquire about this project <span class="arrow">&#8594;</span></a></div>
+
+    <?php if ($more): ?>
+    <h3 style="margin:44px 0 14px">More Projects</h3>
+    <div class="projects-grid">
+      <?php foreach ($more as $m): ?>
+        <figure class="proj"><a href="project-detail.php?slug=<?= e($m['slug']) ?>"><img src="<?= $img($m['cover_image']) ?>" alt="<?= e($m['title']) ?>"></a></figure>
+      <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+  </div>
+</section>
+<div class="lightbox" id="lightbox"><span class="lightbox-close">&times;</span><img src="" alt=""></div>
+<?php require __DIR__ . '/app/partials/footer.php'; ?>

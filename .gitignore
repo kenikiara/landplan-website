@@ -1,0 +1,12 @@
+# --- Secrets: never commit real credentials ---
+app/config.php
+
+# --- User uploads: keep the folders, ignore their contents ---
+uploads/*/*
+!uploads/*/.gitkeep
+!uploads/.htaccess
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.log

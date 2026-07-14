@@ -1,0 +1,57 @@
+# ============================================================
+#  Landplan.co.ke — root Apache config (cPanel / shared hosting)
+# ============================================================
+
+# Use index.php or index.html as the directory default
+DirectoryIndex index.php index.html
+
+# ---- Pretty errors ----
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# ---- Dynamic detail pages ----
+# Any legacy/static "*-detail.html?slug=..." link is served by the database-driven
+# PHP page, so every listing opens its OWN data (not a single hardcoded one).
+# QSA keeps the ?slug=... query string. These only fire on Apache (cPanel); on a
+# static host the .html files still work as a fallback.
+RewriteRule ^land-detail\.html$    land-detail.php    [L,QSA]
+RewriteRule ^house-detail\.html$   house-detail.php   [L,QSA]
+RewriteRule ^project-detail\.html$ project-detail.php [L,QSA]
+
+# ---- Force HTTPS (uncomment after your SSL cert is active) ----
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- Security headers ----
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- Block access to sensitive files ----
+<FilesMatch "(^\.|\.(sql|md|log|ini|example\.php)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# ---- Gzip ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- Cache static assets ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png    "access plus 30 days"
+  ExpiresByType image/jpeg   "access plus 30 days"
+  ExpiresByType image/webp   "access plus 30 days"
+  ExpiresByType text/css     "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+</IfModule>

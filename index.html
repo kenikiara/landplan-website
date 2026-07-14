@@ -40,22 +40,47 @@
 <!-- ============ HEADER / NAV ============ -->
 <header class="header">
   <div class="container header-inner">
-    <a href="#" class="brand">
+    <a href="index.html" class="brand">
       <span class="brand-mark">
         <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm0 4 4.5 3.4v5.1L12 17.9l-4.5-3.4V9.4L12 6z"/></svg>
       </span>
       <span class="brand-text">LANDPLAN<small>.CO.KE</small></span>
     </a>
     <nav class="nav">
-      <a href="#" class="active">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#land">Land for Sale</a>
-      <a href="#services" class="has-drop">Services</a>
-      <a href="#projects" class="has-drop">Projects</a>
-      <a href="#resources" class="has-drop">Resources</a>
-      <a href="#contact">Contact Us</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="land.html">Land for Sale</a>
+      <div class="nav-item">
+        <a href="services.html" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="land.html">Land for Sale</a>
+          <a href="service-architecture.html">Architecture &amp; Design</a>
+          <a href="service-construction.html">Building &amp; Construction</a>
+          <a href="service-project-development.html">Project Development</a>
+          <a href="houses.html">Houses for Sale</a>
+          <a href="service-due-diligence.html">Due Diligence &amp; Property Management</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="projects.html" class="dropdown-toggle">Projects</a>
+        <div class="dropdown-menu">
+          <a href="projects.html">All Projects</a>
+          <a href="projects.html#ongoing">Ongoing Projects</a>
+          <a href="projects.html#completed">Completed Projects</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html" class="dropdown-toggle">Resources</a>
+        <div class="dropdown-menu">
+          <a href="blog.html">Blog</a>
+          <a href="blog-land-buying-guide.html">Land Buying Guide</a>
+          <a href="blog-building-guide.html">Building Guide</a>
+          <a href="faqs.html">FAQs</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact Us</a>
     </nav>
-    <a href="#contact" class="btn btn-green btn-sm">Get Started</a>
+    <a href="contact.html" class="btn btn-green btn-sm">Get Started</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
@@ -71,15 +96,15 @@
       <h1>Your One Stop<br>Shop for Land &amp;<br>Property <span class="accent">Solutions</span></h1>
       <p class="hero-sub">We sell land, design dream spaces, build quality homes and develop projects that last generations.</p>
       <div class="hero-actions">
-        <a href="#land" class="btn btn-green">Explore Land for Sale</a>
-        <a href="#services" class="btn btn-outline">Our Services <span class="arrow">&#8594;</span></a>
+        <a href="land.html" class="btn btn-green">Explore Land for Sale</a>
+        <a href="services.html" class="btn btn-outline">Our Services <span class="arrow">&#8594;</span></a>
       </div>
     </div>
   </div>
 
   <!-- feature strip -->
   <div class="container">
-    <div class="feature-strip">
+    <div class="feature-strip reveal">
       <div class="feature">
         <span class="feature-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
         <div><h4>Prime Locations</h4><p>Handpicked land in growing areas</p></div>
@@ -103,30 +128,31 @@
 <!-- ============ ABOUT ============ -->
 <section class="about section" id="about">
   <div class="container about-grid">
-    <div class="about-copy">
+    <div class="about-copy reveal">
       <p class="eyebrow">ABOUT LANDPLAN</p>
       <h2>Building Better<br>Tomorrows, Today</h2>
       <p class="muted">Landplan.co.ke is a leading land and property solutions company in Kenya. We offer a seamless experience from acquiring land to designing, building and developing world-class projects.</p>
+      <p style="margin-top:18px"><a href="about.html" class="svc-link">Learn More About Us <span class="arrow">&#8594;</span></a></p>
     </div>
-    <div class="stats-card">
+    <div class="stats-card reveal reveal-1">
       <div class="stat">
         <span class="stat-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
-        <strong>10+</strong>
+        <strong data-count="10" data-suffix="+">0+</strong>
         <span>Years of Experience</span>
       </div>
       <div class="stat">
         <span class="stat-ico"><svg viewBox="0 0 24 24"><path d="M12 21s-6.7-4.3-9.3-8C.8 10.2 2 6.4 5.2 5.3 7.2 4.6 9.3 5.3 12 8c2.7-2.7 4.8-3.4 6.8-2.7 3.2 1.1 4.4 4.9 2.5 7.7C18.7 16.7 12 21 12 21z"/></svg></span>
-        <strong>5000+</strong>
+        <strong data-count="5000" data-suffix="+">0+</strong>
         <span>Happy Clients</span>
       </div>
       <div class="stat">
         <span class="stat-ico"><svg viewBox="0 0 24 24"><path d="M3 5v14h18V5H3zm16 12H5V7h14v10zM7 9h4v2H7V9zm6 0h4v6h-4V9zm-6 4h4v2H7v-2z"/></svg></span>
-        <strong>1000+</strong>
+        <strong data-count="1000" data-suffix="+">0+</strong>
         <span>Acres Sold</span>
       </div>
       <div class="stat">
         <span class="stat-ico"><svg viewBox="0 0 24 24"><path d="M22 9 12 2 2 9h3v11h6v-6h2v6h6V9h3z"/></svg></span>
-        <strong>300+</strong>
+        <strong data-count="300" data-suffix="+">0+</strong>
         <span>Projects Completed</span>
       </div>
     </div>
@@ -136,49 +162,49 @@
 <!-- ============ WHAT WE DO ============ -->
 <section class="services section" id="services">
   <div class="container">
-    <div class="section-head center">
+    <div class="section-head center reveal">
       <p class="eyebrow">WHAT WE DO</p>
       <h2>Comprehensive Land &amp; Property Solutions</h2>
     </div>
     <div class="services-grid">
-      <article class="svc-card">
+      <article class="svc-card reveal reveal-1">
         <div class="svc-media"><img src="assets/img/svc-land.png" alt="Land for Sale"><span class="svc-badge"><svg viewBox="0 0 24 24"><path d="M3 5v14h18V5H3zm16 12H5V7h14v10zM7 9h4v2H7V9zm6 0h4v6h-4V9zm-6 4h4v2H7v-2z"/></svg></span></div>
         <div class="svc-body">
           <h3>Land for Sale</h3>
           <p>Residential, commercial, agricultural &amp; mixed-use plots in prime locations.</p>
-          <a class="svc-link" href="#land">Explore Land <span class="arrow">&#8594;</span></a>
+          <a class="svc-link" href="land.html">Explore Land <span class="arrow">&#8594;</span></a>
         </div>
       </article>
-      <article class="svc-card">
+      <article class="svc-card reveal reveal-2">
         <div class="svc-media"><img src="assets/img/svc-arch.png" alt="Architecture &amp; Design"><span class="svc-badge"><svg viewBox="0 0 24 24"><path d="M3 21v-4l11-11 4 4L7 21H3zm17.7-13.3-4.4-4.4 1.4-1.4c.4-.4 1-.4 1.4 0l3 3c.4.4.4 1 0 1.4l-1.4 1.4z"/></svg></span></div>
         <div class="svc-body">
           <h3>Architecture &amp; Design</h3>
           <p>Modern, functional and sustainable designs tailored to your lifestyle.</p>
-          <a class="svc-link" href="#">See Designs <span class="arrow">&#8594;</span></a>
+          <a class="svc-link" href="service-architecture.html">See Designs <span class="arrow">&#8594;</span></a>
         </div>
       </article>
-      <article class="svc-card">
+      <article class="svc-card reveal reveal-3">
         <div class="svc-media"><img src="assets/img/svc-construction.png" alt="Building &amp; Construction"><span class="svc-badge"><svg viewBox="0 0 24 24"><path d="M13.8 2.7 12 2l-1.8.7L4 5v2h16V5l-6.2-2.3zM4 9v9H2v2h20v-2h-2V9H4zm5 9H7v-7h2v7zm4 0h-2v-7h2v7zm4 0h-2v-7h2v7z"/></svg></span></div>
         <div class="svc-body">
           <h3>Building &amp; Construction</h3>
           <p>Quality construction, on time and within budget. We build your vision.</p>
-          <a class="svc-link" href="#">Our Process <span class="arrow">&#8594;</span></a>
+          <a class="svc-link" href="service-construction.html">Our Process <span class="arrow">&#8594;</span></a>
         </div>
       </article>
-      <article class="svc-card">
+      <article class="svc-card reveal reveal-4">
         <div class="svc-media"><img src="assets/img/svc-project.png" alt="Project Development"><span class="svc-badge"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></span></div>
         <div class="svc-body">
           <h3>Project Development</h3>
           <p>From concept to completion, we develop impactful residential &amp; commercial projects.</p>
-          <a class="svc-link" href="#projects">View Projects <span class="arrow">&#8594;</span></a>
+          <a class="svc-link" href="projects.html">View Projects <span class="arrow">&#8594;</span></a>
         </div>
       </article>
-      <article class="svc-card">
+      <article class="svc-card reveal reveal-5">
         <div class="svc-media"><img src="assets/img/svc-houses.png" alt="Houses for Sale"><span class="svc-badge"><svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></span></div>
         <div class="svc-body">
           <h3>Houses for Sale</h3>
           <p>Move-in ready homes in great neighborhoods. Find your dream home.</p>
-          <a class="svc-link" href="#">View Homes <span class="arrow">&#8594;</span></a>
+          <a class="svc-link" href="houses.html">View Homes <span class="arrow">&#8594;</span></a>
         </div>
       </article>
     </div>
@@ -188,69 +214,67 @@
 <!-- ============ FEATURED LAND ============ -->
 <section class="land section" id="land">
   <div class="container">
-    <div class="section-head split">
+    <div class="section-head split reveal">
       <div>
         <p class="eyebrow">FEATURED LAND</p>
         <h2>Prime Land. Strategic Locations.</h2>
       </div>
       <div class="head-actions">
-        <a href="#" class="btn btn-outline-dark btn-sm">View All Land <span class="arrow">&#8594;</span></a>
-        <button class="circle-btn" aria-label="Previous">&#8249;</button>
-        <button class="circle-btn" aria-label="Next">&#8250;</button>
+        <a href="land.html" class="btn btn-outline-dark btn-sm">View All Land <span class="arrow">&#8594;</span></a>
       </div>
     </div>
-    <div class="land-grid">
-      <article class="land-card">
+    <div class="land-grid" data-catalog="land" data-featured="1" data-limit="8">
+      <article class="land-card reveal reveal-1">
         <div class="land-media">
-          <img src="assets/img/land-kitengela.png" alt="1/8 Acre Plot Kitengela">
+          <a href="land-detail.html?slug=kitengela-1-8-acre"><img src="assets/img/land-kitengela.png" alt="1/8 Acre Plot Kitengela"></a>
           <span class="tag">RESIDENTIAL</span>
           <button class="save-btn" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
         </div>
-        <div class="land-body">
+        <a href="land-detail.html?slug=kitengela-1-8-acre" class="land-body">
           <p class="land-loc">Kitengela, Kajiado</p>
           <h3>1/8 Acre Plot</h3>
           <p class="land-price">KSh 1,250,000</p>
           <p class="land-deed"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg> Ready Title Deed</p>
-        </div>
+        </a>
       </article>
-      <article class="land-card">
+      <article class="land-card reveal reveal-2">
         <div class="land-media">
-          <img src="assets/img/land-ruiru.png" alt="1/4 Acre Plot Ruiru">
+          <a href="land-detail.html?slug=ruiru-1-4-acre"><img src="assets/img/land-ruiru.png" alt="1/4 Acre Plot Ruiru"></a>
           <span class="tag">COMMERCIAL</span>
           <button class="save-btn" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
         </div>
-        <div class="land-body">
+        <a href="land-detail.html?slug=ruiru-1-4-acre" class="land-body">
           <p class="land-loc">Ruiru, Kiambu</p>
           <h3>1/4 Acre Plot</h3>
           <p class="land-price">KSh 2,850,000</p>
           <p class="land-deed"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg> Ready Title Deed</p>
-        </div>
+        </a>
       </article>
-      <article class="land-card">
+      <article class="land-card reveal reveal-3">
         <div class="land-media">
-          <img src="assets/img/land-joska.png" alt="1/8 Acre Plot Joska">
+          <a href="land-detail.html?slug=joska-1-8-acre"><img src="assets/img/land-joska.png" alt="1/8 Acre Plot Joska"></a>
           <span class="tag">RESIDENTIAL</span>
           <button class="save-btn" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
         </div>
-        <div class="land-body">
+        <a href="land-detail.html?slug=joska-1-8-acre" class="land-body">
           <p class="land-loc">Joska, Kamulu</p>
           <h3>1/8 Acre Plot</h3>
           <p class="land-price">KSh 650,000</p>
           <p class="land-deed"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg> Ready Title Deed</p>
-        </div>
+        </a>
       </article>
-      <article class="land-card">
+      <article class="land-card reveal reveal-4">
         <div class="land-media">
-          <img src="assets/img/land-thika.png" alt="1/2 Acre Plot Thika">
+          <a href="land-detail.html?slug=thika-1-2-acre"><img src="assets/img/land-thika.png" alt="1/2 Acre Plot Thika"></a>
           <span class="tag">MIXED USE</span>
           <button class="save-btn" aria-label="Save"><svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg></button>
         </div>
-        <div class="land-body">
+        <a href="land-detail.html?slug=thika-1-2-acre" class="land-body">
           <p class="land-loc">Thika, Kiambu</p>
           <h3>1/2 Acre Plot</h3>
           <p class="land-price">KSh 3,950,000</p>
           <p class="land-deed"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"/></svg> Ready Title Deed</p>
-        </div>
+        </a>
       </article>
     </div>
   </div>
@@ -259,12 +283,12 @@
 <!-- ============ WHY CHOOSE US ============ -->
 <section class="why section">
   <div class="container">
-    <div class="why-band">
+    <div class="why-band reveal">
       <div class="why-copy">
         <p class="eyebrow light">WHY CHOOSE US</p>
         <h2>The Most Reputable<br>Land Company in Kenya</h2>
         <p>We are committed to transparency, integrity and delivering exceptional value to every client.</p>
-        <a href="#about" class="btn btn-outline btn-sm">More About Us <span class="arrow">&#8594;</span></a>
+        <a href="about.html" class="btn btn-outline btn-sm">More About Us <span class="arrow">&#8594;</span></a>
       </div>
       <div class="why-grid">
         <div class="why-item">
@@ -291,22 +315,20 @@
 <!-- ============ PROJECTS ============ -->
 <section class="projects section" id="projects">
   <div class="container">
-    <div class="section-head split">
+    <div class="section-head split reveal">
       <div>
         <p class="eyebrow">OUR PROJECTS</p>
         <h2>Shaping communities. Building the future.</h2>
       </div>
       <div class="head-actions">
-        <a href="#" class="btn btn-outline-dark btn-sm">View All Projects <span class="arrow">&#8594;</span></a>
-        <button class="circle-btn" aria-label="Previous">&#8249;</button>
-        <button class="circle-btn" aria-label="Next">&#8250;</button>
+        <a href="projects.html" class="btn btn-outline-dark btn-sm">View All Projects <span class="arrow">&#8594;</span></a>
       </div>
     </div>
-    <div class="projects-grid">
-      <figure class="proj"><img src="assets/img/proj-apartments.png" alt="Residential apartment project"></figure>
-      <figure class="proj"><img src="assets/img/proj-gate.png" alt="Gated community entrance"></figure>
-      <figure class="proj"><img src="assets/img/proj-aerial.png" alt="Master-planned estate aerial view"></figure>
-      <figure class="proj"><img src="assets/img/proj-villa.png" alt="Modern villa at dusk"></figure>
+    <div class="projects-grid" data-catalog="project" data-featured="1" data-limit="8">
+      <figure class="proj reveal reveal-1"><a href="project-detail.html?slug=greenview-apartments"><img src="assets/img/proj-apartments.png" alt="Residential apartment project"></a></figure>
+      <figure class="proj reveal reveal-2"><a href="project-detail.html?slug=acacia-gated-community"><img src="assets/img/proj-gate.png" alt="Gated community entrance"></a></figure>
+      <figure class="proj reveal reveal-3"><a href="project-detail.html?slug=meadow-heights-estate"><img src="assets/img/proj-aerial.png" alt="Master-planned estate aerial view"></a></figure>
+      <figure class="proj reveal reveal-4"><a href="project-detail.html?slug=sunset-villa"><img src="assets/img/proj-villa.png" alt="Modern villa at dusk"></a></figure>
     </div>
   </div>
 </section>
@@ -314,16 +336,15 @@
 <!-- ============ TESTIMONIALS ============ -->
 <section class="testimonials section">
   <div class="container">
-    <div class="section-head split">
+    <div class="section-head split reveal">
       <div>
         <p class="eyebrow">WHAT CLIENTS SAY</p>
         <h2>Trusted by Thousands of Happy Clients</h2>
       </div>
     </div>
     <div class="testi-wrap">
-      <button class="circle-btn side" aria-label="Previous">&#8249;</button>
       <div class="testi-grid">
-        <article class="testi-card">
+        <article class="testi-card reveal reveal-1">
           <span class="quote">&#8220;&#8220;</span>
           <p>Landplan made the whole process of buying land so easy and transparent. The best in the business!</p>
           <div class="testi-foot">
@@ -331,7 +352,7 @@
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
           </div>
         </article>
-        <article class="testi-card">
+        <article class="testi-card reveal reveal-2">
           <span class="quote">&#8220;&#8220;</span>
           <p>They designed and built our dream home from scratch. Professional, timely and very reliable.</p>
           <div class="testi-foot">
@@ -339,7 +360,7 @@
             <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
           </div>
         </article>
-        <article class="testi-card">
+        <article class="testi-card reveal reveal-3">
           <span class="quote">&#8220;&#8220;</span>
           <p>I love that they offer everything under one roof. From land to construction, they've got you covered.</p>
           <div class="testi-foot">
@@ -348,30 +369,29 @@
           </div>
         </article>
       </div>
-      <button class="circle-btn side" aria-label="Next">&#8250;</button>
     </div>
   </div>
 </section>
 
 <!-- ============ CTA ============ -->
-<section class="cta">
+<section class="cta reveal">
   <div class="container cta-inner">
     <div>
       <h2>Ready to Own Land or Build Your Dream?</h2>
       <p>Let's turn your vision into reality.</p>
     </div>
     <div class="cta-actions">
-      <a href="#contact" class="btn btn-green">Talk to Us <span class="arrow">&#8594;</span></a>
+      <a href="contact.html" class="btn btn-green">Talk to Us <span class="arrow">&#8594;</span></a>
       <a href="https://wa.me/254705121788" class="btn btn-outline"><svg class="wa" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 3.5 17.3L2 22l4.8-1.4A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .7.5.2.6.8 2 .9 2.1.1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.2.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.3.7-.2.3.1 1.7.8 2 1 .3.2.5.2.6.4 0 .2 0 .8-.3 1.3z"/></svg> WhatsApp Us</a>
     </div>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a href="#" class="brand">
+      <a href="index.html" class="brand">
         <span class="brand-mark">
           <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm0 4 4.5 3.4v5.1L12 17.9l-4.5-3.4V9.4L12 6z"/></svg>
         </span>
@@ -387,26 +407,26 @@
     </div>
     <div class="footer-col">
       <h4>Quick Links</h4>
-      <a href="#about">About Us</a>
-      <a href="#land">Land for Sale</a>
-      <a href="#">Houses for Sale</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact Us</a>
+      <a href="about.html">About Us</a>
+      <a href="land.html">Land for Sale</a>
+      <a href="houses.html">Houses for Sale</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact Us</a>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
-      <a href="#services">Architecture &amp; Design</a>
-      <a href="#services">Building &amp; Construction</a>
-      <a href="#services">Project Development</a>
-      <a href="#services">Due Diligence</a>
-      <a href="#services">Property Management</a>
+      <a href="service-architecture.html">Architecture &amp; Design</a>
+      <a href="service-construction.html">Building &amp; Construction</a>
+      <a href="service-project-development.html">Project Development</a>
+      <a href="service-due-diligence.html">Due Diligence</a>
+      <a href="service-due-diligence.html">Property Management</a>
     </div>
-    <div class="footer-col" id="resources">
+    <div class="footer-col">
       <h4>Resources</h4>
-      <a href="#">Land Buying Guide</a>
-      <a href="#">Building Guide</a>
-      <a href="#">FAQs</a>
-      <a href="#">Blog</a>
+      <a href="blog-land-buying-guide.html">Land Buying Guide</a>
+      <a href="blog-building-guide.html">Building Guide</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="blog.html">Blog</a>
     </div>
     <div class="footer-col footer-contact">
       <h4>Contact Us</h4>
@@ -418,10 +438,12 @@
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>&copy; 2025 Landplan.co.ke. All Rights Reserved.</p>
-      <p><a href="#">Terms &amp; Conditions</a> <a href="#">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms &amp; Conditions</a> <a href="privacy.html">Privacy Policy</a></p>
     </div>
   </div>
 </footer>
 
+<script src="js/script.js" defer></script>
+<script src="js/site-dynamic.js" defer></script>
 </body>
 </html>
