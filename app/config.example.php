@@ -1,6 +1,6 @@
 <?php
 /**
- * LANDPLAN.CO.KE — configuration
+ * LANDPLAN.CO.KE, configuration
  * Copy this file to  app/config.php  and fill in your cPanel values.
  * config.php is git-ignored so real credentials never leave your server.
  */
@@ -31,7 +31,7 @@ return [
     // ----- Security -----
     'security' => [
         'session_name' => 'landplan_sess',
-        // Used to sign CSRF tokens — set to a long random string (50+ chars):
+        // Used to sign CSRF tokens, set to a long random string (50+ chars):
         'app_key'      => 'CHANGE_ME_TO_A_LONG_RANDOM_STRING',
     ],
 

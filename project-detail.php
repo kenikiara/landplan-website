@@ -17,7 +17,7 @@ $more = $pdo->prepare("SELECT title,slug,location,cover_image,status FROM projec
 $more->execute([$P['id']]);
 $more = $more->fetchAll();
 
-$page_title = $P['meta_title'] ?: ($P['title'] . ' — Landplan.co.ke');
+$page_title = $P['meta_title'] ?: ($P['title'] . ' | Landplan.co.ke');
 $page_desc  = $P['meta_description'] ?: excerpt($P['description'] ?: $P['title'], 30);
 $og_image   = $hero ? base_url(ltrim($hero,'/')) : '';
 $active = 'projects';

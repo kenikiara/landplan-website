@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found — Landplan.co.ke</title>
+<title>Page Not Found | Landplan.co.ke</title>
 <meta name="description" content="The page you're looking for doesn't exist on Landplan.co.ke.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,13 +22,38 @@
     </a>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
       <a href="land.html">Land for Sale</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="resources.html">Resources</a>
+      <a href="houses.html">Houses for Sale</a>
+      <div class="nav-item">
+        <a href="services.html" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="service-architecture.html">Architecture &amp; Design</a>
+          <a href="service-construction.html">Building &amp; Construction</a>
+          <a href="service-project-development.html">Project Development</a>
+          <a href="service-due-diligence.html">Due Diligence &amp; Property Management</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="projects.html" class="dropdown-toggle">Projects</a>
+        <div class="dropdown-menu">
+          <a href="projects.html">All Projects</a>
+          <a href="projects.html#ongoing">Ongoing Projects</a>
+          <a href="projects.html#completed">Completed Projects</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <div class="nav-item">
+        <a href="blog.html" class="dropdown-toggle">Resources</a>
+        <div class="dropdown-menu">
+          <a href="blog.html">Blog</a>
+          <a href="blog-land-buying-guide.html">Land Buying Guide</a>
+          <a href="blog-building-guide.html">Building Guide</a>
+          <a href="faqs.html">FAQs</a>
+        </div>
+      </div>
       <a href="contact.html">Contact Us</a>
     </nav>
+    <a href="client/" class="btn btn-outline-dark btn-sm">My Account</a>
     <a href="contact.html" class="btn btn-green btn-sm">Get Started</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
       <span></span><span></span><span></span>

@@ -49,9 +49,9 @@ require __DIR__ . '/_head.php';
       <tr onclick="location='lead-view.php?id=<?= (int)$r['id'] ?>'" style="cursor:pointer">
         <td class="t-title"><?= e($r['name']) ?></td>
         <td class="mini"><?= e($r['phone']) ?><?php if($r['email']):?><br><span class="muted"><?= e($r['email']) ?></span><?php endif;?></td>
-        <td class="mini"><?= e($r['interest'] ?: '—') ?></td>
-        <td class="mini muted"><?= e($r['source'] ?: '—') ?></td>
-        <td class="mini muted"><?= e($r['agent'] ?: '—') ?></td>
+        <td class="mini"><?= e($r['interest'] ?: '-') ?></td>
+        <td class="mini muted"><?= e($r['source'] ?: '-') ?></td>
+        <td class="mini muted"><?= e($r['agent'] ?: '-') ?></td>
         <td><span class="badge <?= e($r['status']) ?>"><?= e(ucfirst($r['status'])) ?></span></td>
         <td class="right mini muted nowrap"><?= e(time_ago($r['created_at'])) ?></td>
         <td class="right"><span class="muted">›</span></td>

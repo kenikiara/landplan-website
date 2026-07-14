@@ -60,7 +60,7 @@ require __DIR__ . '/_head.php';
           <td class="t-title"><?= e($r['name']) ?><?= $r['id']==$ADMIN['id']?' <span class="mini muted">(you)</span>':'' ?></td>
           <td class="mini"><?= e($r['email']) ?></td>
           <td><span class="badge <?= $r['role']==='admin'?'featured':'draft' ?>"><?= e(ucfirst($r['role'])) ?></span></td>
-          <td class="mini muted nowrap"><?= $r['last_login']?e(nice_datetime($r['last_login'])):'—' ?></td>
+          <td class="mini muted nowrap"><?= $r['last_login']?e(nice_datetime($r['last_login'])):'-' ?></td>
           <td><div class="row-actions">
             <a class="btn btn-light btn-sm" href="?edit=<?= (int)$r['id'] ?>">Edit</a>
             <?php if ($r['id']!=$ADMIN['id']): ?>
@@ -84,8 +84,8 @@ require __DIR__ . '/_head.php';
       <div class="field"><label>Email *</label><input type="email" name="email" value="<?= e($edit['email'] ?? '') ?>" required></div>
       <div class="field"><label>Role</label>
         <select name="role">
-          <option value="editor" <?= ($edit['role'] ?? '')==='editor'?'selected':'' ?>>Editor — manage content</option>
-          <option value="admin" <?= ($edit['role'] ?? '')==='admin'?'selected':'' ?>>Administrator — full access</option>
+          <option value="editor" <?= ($edit['role'] ?? '')==='editor'?'selected':'' ?>>Editor, manage content</option>
+          <option value="admin" <?= ($edit['role'] ?? '')==='admin'?'selected':'' ?>>Administrator, full access</option>
         </select>
       </div>
       <div class="field"><label>Password <?= $edit?'(leave blank to keep)':'*' ?></label><input type="password" name="password" <?= $edit?'':'required minlength="8"' ?>><span class="hint">Minimum 8 characters.</span></div>

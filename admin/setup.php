@@ -1,6 +1,6 @@
 <?php
 /**
- * One-time setup — creates the first admin account.
+ * One-time setup, creates the first admin account.
  * Automatically disables itself once any user exists.
  * DELETE this file after you have created your account.
  */
@@ -45,7 +45,7 @@ if (is_post()) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Setup — Landplan Admin</title>
+<title>Setup | Landplan Admin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/admin.css">

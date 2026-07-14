@@ -75,8 +75,13 @@ $year     = date('Y');
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <p>&copy; <?= $year ?> Landplan.co.ke. All Rights Reserved.</p>
-      <p><a href="terms.html">Terms &amp; Conditions</a> <a href="privacy.html">Privacy Policy</a></p>
+      <p>&copy; <?= $year ?> Landplan.co.ke. All rights reserved. Website by <a href="https://kendesigners.com" target="_blank" rel="noopener">Kendesigners.com</a></p>
+      <p class="footer-legal">
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact</a>
+      </p>
     </div>
   </div>
 </footer>

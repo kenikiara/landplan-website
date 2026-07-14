@@ -21,7 +21,7 @@ $similar = $pdo->prepare("SELECT title,slug,location,price,category,cover_image,
 $similar->execute([$L['id']]);
 $similar = $similar->fetchAll();
 
-$page_title = $L['meta_title'] ?: ($L['title'] . ' – ' . $L['location'] . ' — Landplan.co.ke');
+$page_title = $L['meta_title'] ?: ($L['title'] . ', ' . $L['location'] . ' | Landplan.co.ke');
 $page_desc  = $L['meta_description'] ?: excerpt($L['description'] ?: $L['title'], 30);
 $og_image   = $hero ? base_url(ltrim($hero,'/')) : '';
 $active = 'land';
@@ -31,7 +31,7 @@ $img = fn($p) => e(ltrim((string)$p, '/'));
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="land.html">Land for Sale</a><span class="sep">/</span><span class="current"><?= e($L['title']) ?></span></div>
-    <h1><?= e($L['title']) ?> – <?= e($L['location']) ?></h1>
+    <h1><?= e($L['title']) ?>, <?= e($L['location']) ?></h1>
     <?php if ($L['status'] === 'sold'): ?><p class="lead" style="color:#c0392b;font-weight:700">This plot has been SOLD.</p><?php endif; ?>
   </div>
 </section>
@@ -58,7 +58,7 @@ $img = fn($p) => e(ltrim((string)$p, '/'));
         </p>
 
         <div class="facts-grid">
-          <div class="fact"><span class="f-label">Plot Size</span><span class="f-val"><?= e($L['size'] ?: '—') ?></span></div>
+          <div class="fact"><span class="f-label">Plot Size</span><span class="f-val"><?= e($L['size'] ?: '-') ?></span></div>
           <div class="fact"><span class="f-label">Price</span><span class="f-val"><?= e(ksh($L['price'])) ?></span></div>
           <div class="fact"><span class="f-label">Title Deed Status</span><span class="f-val"><?= e($L['title_status'] ?: 'Ready Title Deed') ?></span></div>
           <div class="fact"><span class="f-label">Category</span><span class="f-val"><?= e($L['category']) ?></span></div>

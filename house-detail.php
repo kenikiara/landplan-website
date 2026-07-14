@@ -19,7 +19,7 @@ $similar = $pdo->prepare("SELECT title,slug,location,price,bedrooms,cover_image 
 $similar->execute([$H['id']]);
 $similar = $similar->fetchAll();
 
-$page_title = $H['meta_title'] ?: ($H['title'] . ' – ' . $H['location'] . ' — Landplan.co.ke');
+$page_title = $H['meta_title'] ?: ($H['title'] . ', ' . $H['location'] . ' | Landplan.co.ke');
 $page_desc  = $H['meta_description'] ?: excerpt($H['description'] ?: $H['title'], 30);
 $og_image   = $hero ? base_url(ltrim($hero,'/')) : '';
 $active = '';
@@ -29,7 +29,7 @@ $img = fn($p) => e(ltrim((string)$p, '/'));
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><a href="houses.html">Houses for Sale</a><span class="sep">/</span><span class="current"><?= e($H['title']) ?></span></div>
-    <h1><?= e($H['title']) ?> – <?= e($H['location']) ?></h1>
+    <h1><?= e($H['title']) ?>, <?= e($H['location']) ?></h1>
     <?php if ($H['status'] === 'sold'): ?><p class="lead" style="color:#c0392b;font-weight:700">This home has been SOLD.</p><?php endif; ?>
   </div>
 </section>
@@ -52,7 +52,7 @@ $img = fn($p) => e(ltrim((string)$p, '/'));
           <div class="fact"><span class="f-label">Bedrooms</span><span class="f-val"><?= (int)$H['bedrooms'] ?></span></div>
           <div class="fact"><span class="f-label">Bathrooms</span><span class="f-val"><?= (int)$H['bathrooms'] ?></span></div>
           <div class="fact"><span class="f-label">Price</span><span class="f-val"><?= e(ksh($H['price'])) ?></span></div>
-          <div class="fact"><span class="f-label">Size</span><span class="f-val"><?= e($H['size'] ?: '—') ?></span></div>
+          <div class="fact"><span class="f-label">Size</span><span class="f-val"><?= e($H['size'] ?: '-') ?></span></div>
         </div>
 
         <?php if ($H['description']): ?>

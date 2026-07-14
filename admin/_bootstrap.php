@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin bootstrap — include at the very top of every admin page.
+ * Admin bootstrap, include at the very top of every admin page.
  * Sets up sessions, timezone and the app core. Does NOT force login
  * (so index.php / setup.php can include it too). Use _guard.php to require login.
  */
@@ -11,7 +11,7 @@ require_once __DIR__ . '/../app/auth.php';
 date_default_timezone_set((string)(config('site.timezone') ?: 'Africa/Nairobi'));
 boot_session();
 
-/** Count of new (unhandled) leads — shown as a sidebar badge. */
+/** Count of new (unhandled) leads, shown as a sidebar badge. */
 function new_leads_count(): int
 {
     try {

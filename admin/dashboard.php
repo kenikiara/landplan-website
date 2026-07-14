@@ -79,7 +79,7 @@ require __DIR__ . '/_head.php';
           <tr onclick="location='lead-view.php?id=<?= (int)$l['id'] ?>'" style="cursor:pointer">
             <td class="t-title"><?= e($l['name']) ?></td>
             <td class="nowrap"><?= e($l['phone']) ?></td>
-            <td><?= e($l['interest'] ?: '—') ?></td>
+            <td><?= e($l['interest'] ?: '-') ?></td>
             <td><span class="badge <?= e($l['status']) ?>"><?= e(ucfirst($l['status'])) ?></span></td>
             <td class="right nowrap muted mini"><?= e(time_ago($l['created_at'])) ?></td>
           </tr>
@@ -125,7 +125,7 @@ require __DIR__ . '/_head.php';
       <?php foreach ($recentActivity as $a): ?>
         <tr>
           <td class="nowrap muted mini" style="width:140px"><?= e(time_ago($a['created_at'])) ?></td>
-          <td><b><?= e($a['who'] ?: 'System') ?></b> <?= e($a['action']) ?> <?= e($a['entity']) ?><?= $a['detail'] ? ' — ' . e($a['detail']) : '' ?></td>
+          <td><b><?= e($a['who'] ?: 'System') ?></b> <?= e($a['action']) ?> <?= e($a['entity']) ?><?= $a['detail'] ? ', ' . e($a['detail']) : '' ?></td>
         </tr>
       <?php endforeach; ?>
       </tbody>

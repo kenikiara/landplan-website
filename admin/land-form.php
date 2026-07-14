@@ -96,7 +96,7 @@ require __DIR__ . '/_head.php';
           </div>
           <div class="field"><label>Title status</label><input type="text" name="title_status" value="<?= e($row['title_status']) ?>" placeholder="Ready Title Deed"></div>
           <div class="field full"><label>Description</label><textarea name="description" class="tall"><?= e($row['description']) ?></textarea></div>
-          <div class="field full"><label>Key features</label><textarea name="features" placeholder="One feature per line"><?= e($row['features']) ?></textarea><span class="hint">One per line — shown as a checklist on the listing page.</span></div>
+          <div class="field full"><label>Key features</label><textarea name="features" placeholder="One feature per line"><?= e($row['features']) ?></textarea><span class="hint">One per line, shown as a checklist on the listing page.</span></div>
           <div class="field full"><label>Map embed (optional)</label><textarea name="map_embed" placeholder="Paste a Google Maps embed URL or iframe"><?= e($row['map_embed']) ?></textarea></div>
         </div>
       </div>

@@ -16,7 +16,7 @@ $title='Services'; $active='services';
 require __DIR__ . '/_head.php';
 ?>
 <div class="page-head">
-  <div><h2>Services</h2><p class="sub"><?= count($rows) ?> service<?= count($rows)===1?'':'s' ?> — the “What We Do” cards</p></div>
+  <div><h2>Services</h2><p class="sub"><?= count($rows) ?> service<?= count($rows)===1?'':'s' ?>, the “What We Do” cards</p></div>
   <div class="spacer"></div>
   <a class="btn btn-primary" href="service-form.php"><svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z"/></svg> Add Service</a>
 </div>

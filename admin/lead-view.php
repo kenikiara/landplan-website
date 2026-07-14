@@ -74,10 +74,10 @@ require __DIR__ . '/_head.php';
       <h3 style="font-size:14px;margin-bottom:14px">Enquiry details</h3>
       <table class="data">
         <tr><th style="width:130px">Name</th><td><?= e($lead['name']) ?></td></tr>
-        <tr><th>Phone</th><td><?= e($lead['phone'] ?: '—') ?></td></tr>
-        <tr><th>Email</th><td><?= $lead['email']?'<a href="mailto:'.e($lead['email']).'" style="color:var(--green)">'.e($lead['email']).'</a>':'—' ?></td></tr>
-        <tr><th>Interested in</th><td><?= e($lead['interest'] ?: '—') ?></td></tr>
-        <tr><th>Source</th><td><?= e($lead['source'] ?: '—') ?></td></tr>
+        <tr><th>Phone</th><td><?= e($lead['phone'] ?: '-') ?></td></tr>
+        <tr><th>Email</th><td><?= $lead['email']?'<a href="mailto:'.e($lead['email']).'" style="color:var(--green)">'.e($lead['email']).'</a>':'-' ?></td></tr>
+        <tr><th>Interested in</th><td><?= e($lead['interest'] ?: '-') ?></td></tr>
+        <tr><th>Source</th><td><?= e($lead['source'] ?: '-') ?></td></tr>
         <?php if ($item): ?><tr><th>Property</th><td><a href="<?= e($item['url']) ?>" target="_blank" style="color:var(--green)"><?= e($item['title']) ?> ↗</a></td></tr><?php endif; ?>
         <?php if ($lead['client_id']): ?><tr><th>Client</th><td><a href="client-view.php?id=<?= (int)$lead['client_id'] ?>" style="color:var(--green)"><?= e($lead['client_name']) ?> ↗</a></td></tr><?php endif; ?>
       </table>

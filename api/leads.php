@@ -20,7 +20,7 @@ if (empty($in) && str_contains((string)($_SERVER['CONTENT_TYPE'] ?? ''), 'applic
 }
 $f = fn(string $k) => trim((string)($in[$k] ?? ''));
 
-// Honeypot — bots fill hidden fields. Pretend success.
+// Honeypot, bots fill hidden fields. Pretend success.
 if ($f('company') !== '') json_out(['ok' => true]);
 
 $name    = $f('name');

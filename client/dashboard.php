@@ -51,7 +51,7 @@ require __DIR__ . '/_head.php';
 
 <div class="card card-pad" style="margin-top:18px;background:var(--deep);color:#fff;border:none">
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-    <div style="flex:1;min-width:220px"><h3 style="font-size:17px">Need help or ready to buy?</h3><p style="color:#c4ccc2;margin-top:4px">Talk to our team — we're here to help you every step of the way.</p></div>
+    <div style="flex:1;min-width:220px"><h3 style="font-size:17px">Need help or ready to buy?</h3><p style="color:#c4ccc2;margin-top:4px">Talk to our team, we're here to help you every step of the way.</p></div>
     <a class="btn btn-primary" href="../contact.html">Contact us</a>
   </div>
 </div>

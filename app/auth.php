@@ -2,8 +2,8 @@
 /**
  * Authentication, sessions and CSRF for both the admin (staff) area
  * and the client portal. Two independent identities live in one session:
- *   $_SESSION['admin_id']  — a staff user (users table)
- *   $_SESSION['client_id'] — a portal client (clients table)
+ *   $_SESSION['admin_id'] , a staff user (users table)
+ *   $_SESSION['client_id'], a portal client (clients table)
  */
 declare(strict_types=1);
 

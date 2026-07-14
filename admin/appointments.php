@@ -53,7 +53,7 @@ require __DIR__ . '/_head.php';
         <tr>
           <td class="nowrap"><b><?= e(nice_datetime($r['when_at'])) ?></b></td>
           <td><?= e($r['name']) ?><?php if($r['phone']):?><div class="t-sub"><?= e($r['phone']) ?></div><?php endif;?></td>
-          <td class="mini"><?= e($r['location'] ?: '—') ?></td>
+          <td class="mini"><?= e($r['location'] ?: '-') ?></td>
           <td>
             <form method="post" style="display:inline"><?= csrf_field() ?>
               <input type="hidden" name="action" value="status"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>">

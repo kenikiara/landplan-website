@@ -49,8 +49,8 @@ require __DIR__ . '/_head.php';
       <tr>
         <td><img class="t-thumb" src="<?= $r['cover_image']?e('../'.ltrim($r['cover_image'],'/')):'' ?>" alt=""></td>
         <td><div class="t-title"><?= e($r['title']) ?></div><div class="t-sub">/<?= e($r['slug']) ?></div></td>
-        <td><?= e($r['category'] ?: '—') ?></td>
-        <td class="mini muted"><?= e($r['author'] ?: '—') ?></td>
+        <td><?= e($r['category'] ?: '-') ?></td>
+        <td class="mini muted"><?= e($r['author'] ?: '-') ?></td>
         <td><span class="badge <?= e($r['status']) ?>"><?= e(ucfirst($r['status'])) ?></span></td>
         <td class="right nowrap mini muted"><?= e(nice_date($r['published_at'] ?: $r['created_at'])) ?></td>
         <td><div class="row-actions">

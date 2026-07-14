@@ -86,8 +86,9 @@ h2 { font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: -.01em
 .brand-mark svg { width: 22px; height: 22px; }
 .brand-text { color: #fff; font-weight: 800; font-size: 19px; letter-spacing: .02em; display: flex; flex-direction: column; line-height: 1; gap: 3px; }
 .brand-text small { color: var(--lime); font-size: 8.5px; font-weight: 700; letter-spacing: .28em; }
-.nav { display: flex; gap: 24px; margin-left: auto; }
-.nav a { color: #c7cdc5; font-size: 13.5px; font-weight: 500; padding: 6px 0; position: relative; }
+.nav { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.nav > a, .nav-item { display: inline-flex; align-items: center; height: 34px; }
+.nav a { color: #c7cdc5; font-size: 13.5px; font-weight: 500; padding: 6px 0; position: relative; white-space: nowrap; }
 .nav a:hover { color: #fff; }
 .nav a.active { color: var(--lime); }
 .nav a.active::after {
@@ -295,6 +296,8 @@ h2 { font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: -.01em
 .footer-bottom p { font-size: 12px; color: #7d867b; }
 .footer-bottom a { color: #7d867b; margin-left: 18px; }
 .footer-bottom a:hover { color: var(--lime); }
+.footer-bottom-inner p:first-child a { margin-left: 4px; color: var(--lime); }
+.footer-legal a:first-child { margin-left: 0; }
 
 /* ============ SCROLL REVEAL / ANIMATION ============ */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }

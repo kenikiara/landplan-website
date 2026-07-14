@@ -12,7 +12,7 @@ $more = $pdo->prepare("SELECT title,slug,excerpt,cover_image,category,published_
 $more->execute([$A['id']]);
 $more = $more->fetchAll();
 
-$page_title = $A['meta_title'] ?: ($A['title'] . ' — Landplan.co.ke');
+$page_title = $A['meta_title'] ?: ($A['title'] . ' | Landplan.co.ke');
 $page_desc  = $A['meta_description'] ?: ($A['excerpt'] ?: excerpt($A['body'] ?: $A['title'], 30));
 $og_image   = $A['cover_image'] ? base_url(ltrim($A['cover_image'],'/')) : '';
 $active = '';

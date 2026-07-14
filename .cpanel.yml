@@ -1,0 +1,22 @@
+---
+# cPanel Git Version Control deployment.
+# In cPanel -> Git Version Control, clone this repo, then click "Deploy HEAD Commit"
+# (or set up Pull-then-Deploy). This copies the site into public_html.
+#
+# NOTE: app/config.php is git-ignored, so it is never copied by this deploy.
+# Upload config.php to public_html/app/ once by hand; deploys will leave it alone.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kendesig/public_html/
+    - /bin/cp -R admin $DEPLOYPATH
+    - /bin/cp -R api $DEPLOYPATH
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R client $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R database $DEPLOYPATH
+    - /bin/cp -R uploads $DEPLOYPATH
+    - /bin/cp *.html $DEPLOYPATH
+    - /bin/cp *.php $DEPLOYPATH
+    - /bin/cp .htaccess $DEPLOYPATH

@@ -16,7 +16,7 @@ $ig       = $s['social_instagram'] ?? '#';
 $li       = $s['social_linkedin']  ?? '#';
 $wa       = $s['social_whatsapp']  ?? ('https://wa.me/' . ltrim($phoneRaw, '+'));
 
-$title  = $page_title ?? 'Landplan.co.ke — Land & Property Solutions';
+$title  = $page_title ?? 'Landplan.co.ke, Land & Property Solutions';
 $desc   = $page_desc  ?? 'We sell land, design dream spaces, build quality homes and develop projects that last generations.';
 $active = $active ?? '';
 ?>
@@ -74,16 +74,14 @@ $active = $active ?? '';
     </a>
     <nav class="nav">
       <a href="index.html"<?= $active === 'home' ? ' class="active"' : '' ?>>Home</a>
-      <a href="about.html"<?= $active === 'about' ? ' class="active"' : '' ?>>About Us</a>
       <a href="land.html"<?= $active === 'land' ? ' class="active"' : '' ?>>Land for Sale</a>
+      <a href="houses.html"<?= $active === 'houses' ? ' class="active"' : '' ?>>Houses for Sale</a>
       <div class="nav-item">
         <a href="services.html" class="dropdown-toggle">Services</a>
         <div class="dropdown-menu">
-          <a href="land.html">Land for Sale</a>
           <a href="service-architecture.html">Architecture &amp; Design</a>
           <a href="service-construction.html">Building &amp; Construction</a>
           <a href="service-project-development.html">Project Development</a>
-          <a href="houses.html">Houses for Sale</a>
           <a href="service-due-diligence.html">Due Diligence &amp; Property Management</a>
         </div>
       </div>
@@ -95,8 +93,9 @@ $active = $active ?? '';
           <a href="projects.html#completed">Completed Projects</a>
         </div>
       </div>
+      <a href="about.html"<?= $active === 'about' ? ' class="active"' : '' ?>>About Us</a>
       <div class="nav-item">
-        <a href="resources.html" class="dropdown-toggle">Resources</a>
+        <a href="blog.html" class="dropdown-toggle">Resources</a>
         <div class="dropdown-menu">
           <a href="blog.html">Blog</a>
           <a href="blog-land-buying-guide.html">Land Buying Guide</a>
@@ -105,8 +104,8 @@ $active = $active ?? '';
         </div>
       </div>
       <a href="contact.html"<?= $active === 'contact' ? ' class="active"' : '' ?>>Contact Us</a>
-      <a href="client/" class="portal-link">My Account</a>
     </nav>
+    <a href="client/" class="btn btn-outline-dark btn-sm">My Account</a>
     <a href="contact.html" class="btn btn-green btn-sm">Get Started</a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">
       <span></span><span></span><span></span>

@@ -8,7 +8,7 @@ $stmt->execute([$slug]);
 $P = $stmt->fetch();
 if (!$P) { http_response_code(404); require __DIR__ . '/404.html'; exit; }
 
-$page_title = $P['meta_title'] ?: ($P['title'] . ' — Landplan.co.ke');
+$page_title = $P['meta_title'] ?: ($P['title'] . ' | Landplan.co.ke');
 $page_desc  = $P['meta_description'] ?: excerpt($P['body'] ?: $P['title'], 30);
 $active = '';
 require __DIR__ . '/app/partials/head.php';

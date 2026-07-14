@@ -10,11 +10,16 @@ ErrorDocument 404 /404.html
 
 RewriteEngine On
 
-# ---- Dynamic detail pages ----
-# Any legacy/static "*-detail.html?slug=..." link is served by the database-driven
-# PHP page, so every listing opens its OWN data (not a single hardcoded one).
-# QSA keeps the ?slug=... query string. These only fire on Apache (cPanel); on a
-# static host the .html files still work as a fallback.
+# ---- Database-driven pages ----
+# Serve the PHP (DB-driven) versions for these URLs so the whole site shows live,
+# editable data and every listing opens its OWN details. QSA keeps query strings.
+# These only fire on Apache (cPanel); on a static host the .html files still work.
+RewriteRule ^$                     index.php          [L]
+RewriteRule ^index\.html$          index.php          [L,QSA]
+RewriteRule ^land\.html$           land.php           [L,QSA]
+RewriteRule ^houses\.html$         houses.php         [L,QSA]
+RewriteRule ^projects\.html$       projects.php       [L,QSA]
+RewriteRule ^blog\.html$           blog.php           [L,QSA]
 RewriteRule ^land-detail\.html$    land-detail.php    [L,QSA]
 RewriteRule ^house-detail\.html$   house-detail.php   [L,QSA]
 RewriteRule ^project-detail\.html$ project-detail.php [L,QSA]
